@@ -126,7 +126,7 @@ object BaseComputing extends Serializable {
     val joinGeo = useritemJoinItem.map {
       case (user_item_cat_id, features) =>
         val user_id = user_item_cat_id.split("_")(0)
-        val item_id = user_item_cat_id.split("_")(0)
+        val item_id = user_item_cat_id.split("_")(1)
         (user_id + "_" + item_id, (user_item_cat_id, features))
     }.join(geo).map {
       case (user_item_id, ((user_item_cat_id, features), geo_features)) =>
